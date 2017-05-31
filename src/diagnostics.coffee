@@ -22,3 +22,6 @@ module.exports = (robot) ->
 
   robot.respond /TIME$/i, (msg) ->
     msg.send "Server time is: #{new Date()}"
+  
+  robot.respond /ENV (.*)$/i, (msg) ->
+    msg.send "Environment variable value is: #{process.env[msg.match[1]]}"
